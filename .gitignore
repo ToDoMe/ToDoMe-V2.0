@@ -1,0 +1,10 @@
+bin/
+#assets/
+*.class
+*.temp
+*.bak
+*~
+*.tmp
+.settings/
+.metadata/
+res/layout/map.xml
