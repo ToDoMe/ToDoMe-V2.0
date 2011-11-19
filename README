@@ -1,0 +1,4 @@
+Required dependancies:
+ormlite-core-4.30.jar - http://sourceforge.net/projects/ormlite/files/releases/com/j256/ormlite/ormlite-core/4.30/ormlite-core-4.30.jar/download
+ormlite-android-4.30.jar - http://sourceforge.net/projects/ormlite/files/releases/com/j256/ormlite/ormlite-android/4.30/ormlite-android-4.30.jar/download
+osmdroid-android-3.0.5.jar - http://code.google.com/p/osmdroid/downloads/detail?name=osmdroid-android-3.0.5.jar
