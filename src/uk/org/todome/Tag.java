@@ -22,15 +22,31 @@
 
 package uk.org.todome;
 
-import android.app.Activity;
-import android.os.Bundle;
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
 
-public class ToDoMeActivity extends Activity {
-	/** Called when the activity is first created. */
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main);
+@DatabaseTable(tableName = "tags")
+public class Tag {
+	
+	public final static String TAG_FIELD_NAME = "tag";
 
+	@DatabaseField(id = true, canBeNull = false)
+	private final String tag;
+
+	public Tag(String tag) {
+		this.tag = tag;
 	}
+
+	public static Tag getTagFromString(String tag) {
+		return new Tag(tag);
+	}
+
+	public static String getStringFromTag(Tag tag) {
+		return tag.toString();
+	}
+
+	public String toString() {
+		return tag;
+	}
+
 }

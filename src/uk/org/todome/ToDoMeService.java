@@ -22,15 +22,42 @@
 
 package uk.org.todome;
 
-import android.app.Activity;
+import android.app.Service;
+import android.content.Intent;
+import android.location.Location;
+import android.location.LocationListener;
 import android.os.Bundle;
+import android.os.IBinder;
 
-public class ToDoMeActivity extends Activity {
-	/** Called when the activity is first created. */
+// Service will fetch location data from server and send it to the Activity
+
+public class ToDoMeService extends Service implements LocationListener {
+	private final String TAG = "ToDoMeService";
+
 	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main);
+	public IBinder onBind(Intent intent) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void onLocationChanged(Location location) {
+		// TODO Auto-generated method stub
 
 	}
+
+	public void onProviderDisabled(String provider) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void onProviderEnabled(String provider) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void onStatusChanged(String provider, int status, Bundle extras) {
+		// TODO Auto-generated method stub
+
+	}
+
 }

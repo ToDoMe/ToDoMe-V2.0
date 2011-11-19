@@ -22,15 +22,29 @@
 
 package uk.org.todome;
 
-import android.app.Activity;
-import android.os.Bundle;
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
 
-public class ToDoMeActivity extends Activity {
-	/** Called when the activity is first created. */
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main);
+@DatabaseTable(tableName = "tasksTagLinks")
+public class TaskTagLink {
 
+	public final static String TASK_ID_FIELD_NAME = "task_id";
+	public final static String TAG_ID_FIELD_NAME = "tag_id";
+
+	@DatabaseField(generatedId = true)
+	int id;
+
+	@DatabaseField(foreign = true, columnName = TASK_ID_FIELD_NAME)
+	Task task;
+
+	@DatabaseField(foreign = true, columnName = TAG_ID_FIELD_NAME)
+	Tag tag;
+
+	TaskTagLink() {
+	}
+
+	public TaskTagLink(Task task, Tag tag) {
+		this.task = task;
+		this.tag = tag;
 	}
 }
